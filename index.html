@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matthew Ozzie</title>
+    <link rel="icon" type="image/jpeg" href="Icon.jpg">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+        <nav class="navbar">
+            <a href="#home">HOME</a>
+            <a href="#gallery">ABOUT</a>
+            <div class="contact-menu">
+                <a href="#">CONTACT</a>
+                <div class="contact-options">
+                    <a href="mailto:MatthewCzzie@gmail.com">EMAIL</a>
+                    <a href="https://t.me/AnoMessBot?start=MLFn6oy" target="_blank">ANONYMOUS</a>
+                    <a href="https://t.me/OhyoIk">TELEGRAM</a>
+                </div>
+            </div>
+        </nav>
+        <img id="home" class="main-image" src="images/main.jpg" alt="Matthew">
+        <div id="about" class="hero-content">
+            <h1 class="matthew">MATTHEW OZZIE</h1>
+            <div class="wording">
+            <p> There isn't really much to explain.<br> I'm simply here, taking things as they come,<br> finding meaning in some moments and letting others pass. </p> 
+            <p> Nothing here is meant to tell a complete story.<br> Some things are better left unsaid, some memories are better<br> kept quietly, and some moments are simply meant to be lived. </p> 
+            <p> Maybe life doesn't always need a reason or a direction.<br> Sometimes, it's enough to just be present and see where things go. </p> 
+        </div>
+    </div>
+  <div class="music-player">
+    <audio id="music" src="song.mp3"></audio>
+
+    <button id="musicButton">▶ PLAY</button>
+</div>
+        <section id="gallery" class="gallery-section">
+
+    <h2>ABOUT</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item gallery-large">
+            <a href="#photo1">
+                <img src="./images/photo1.jpg" alt="Photo 1">
+            </a>
+        </div>
+
+        <div class="gallery-item">
+            <a href="#photo2">
+                <img src="./images/photo2.jpg" alt="Photo 2">
+            </a>
+        </div>
+
+        <div class="gallery-item">
+            <a href="#photo3">
+                <img src="./images/photo3.jpg" alt="Photo 3">
+            </a>
+        </div>
+
+        <div class="gallery-item gallery-large">
+            <a href="#photo4">
+                <img src="./images/photo4.jpg" alt="Photo 4">
+            </a>
+        </div>
+
+    </div>
+
+</section> <div id="photo1" class="lightbox">
+    <a href="#gallery" class="lightbox-close">&times;</a>
+    <img src="./images/photo1.jpg" alt="Photo 1">
+</div>
+
+<div id="photo2" class="lightbox">
+    <a href="#gallery" class="lightbox-close">&times;</a>
+    <img src="./images/photo2.jpg" alt="Photo 2">
+</div>
+
+<div id="photo3" class="lightbox">
+    <a href="#gallery" class="lightbox-close">&times;</a>
+    <img src="./images/photo3.jpg" alt="Photo 3">
+</div>
+
+<div id="photo4" class="lightbox">
+    <a href="#gallery" class="lightbox-close">&times;</a>
+    <img src="./images/photo4.jpg" alt="Photo 4">
+</div>
+
+        <footer class="footer">
+            <p>© 2026 Matthew Ozzie</p> 
+            <span>All rights reserved.</span>
+        </footer>
+
+</div>
+<script>
+    const music = document.getElementById("music");
+    const button = document.getElementById("musicButton");
+
+    button.addEventListener("click", async () => {
+
+        if (music.paused) {
+
+            try {
+                await music.play();
+
+                button.textContent = "❚❚ PAUSE";
+                button.classList.add("playing");
+
+            } catch (error) {
+                console.log("Audio error:", error);
+            }
+
+        } else {
+
+            music.pause();
+
+            button.textContent = "▶ PLAY";
+            button.classList.remove("playing");
+
+        }
+    });
+
+    music.addEventListener("ended", () => {
+        button.textContent = "▶ PLAY";
+        button.classList.remove("playing");
+    });
+</script>
+</body>
+</html>
